@@ -83,7 +83,7 @@ with col2:
 with col3:
     # Gamifikasi pencapaian target profit (Misal target = 150 Juta)
     target_profit = 150.0
-    persentase = min((hasil_pred / target_profit) * 100, 100)
+    persentase = max(0, min((hasil_pred / target_profit) * 100, 100))
     st.metric(label="Pencapaian Target (150 Jt)", value=f"{persentase:.1f}%")
 
 # Bar progres berwarna otomatis
